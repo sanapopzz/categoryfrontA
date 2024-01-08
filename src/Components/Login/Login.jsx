@@ -1,6 +1,6 @@
 import { Button, TextField } from '@mui/material'
 import React, { useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
  
 const Login = (props) => {
     const [un,setUn]=useState('');
@@ -26,7 +26,7 @@ const Login = (props) => {
          return;
         }
        else{
-        Navigate("/c");
+        Navigate("/Home");
         // props.checkLogin(un,pwd);
        }
     }
@@ -41,7 +41,7 @@ const Login = (props) => {
           type="password"
           autoComplete="current-password"onChange={readpassword}
         /><br/><br/>
-      <Button variant="contained"onClick={checkfilldata}>Ok</Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Button variant="contained"onClick={checkfilldata}><Link to='/h'>Ok</Link></Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Button variant="contained">cancel</Button>{error&&'error occured'}
     </div>
   )
